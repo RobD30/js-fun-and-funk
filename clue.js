@@ -1,25 +1,27 @@
-const game = {
-    'suspects': [
-        {
-            name: "Rusty",
-            color: "orange"
-        }, {
-            name: "Miss Scarlet",
-            color: "red"
-        }
-    ]
+const weapons = ['candle', 'leadpipe', 'revolver'];
+
+const makeBroken = function(item) {
+    return `broken ${item}`;
 };
 
-var gameLoop = function () {
-    for (var i = 0; i < game.suspects.length; i++) {
-        console.log('outer loop')
-        for (var key in game.suspects[i]) {
+const _ = {
+    map: function(array, callback) {
+        var results = [];
+
+        this.each(array, (item) => {
+            results.push(callback(item));
+        });
+
+        return results;
+    },
+
+    each: function(list, callback) {
+        for (let i = 0; i < list.length; i++) {
+            callback(list[i], i, list);
         }
     }
-    }
+};
 
-function foo() {
-    for (let
-}
 
-foo();
+
+_.map(weapons, makeBroken);
