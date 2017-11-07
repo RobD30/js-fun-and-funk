@@ -1,0 +1,483 @@
+// Create an object using brackets AND dot notation that represents
+// the character and related data that may find in game of clue
+
+// Hello //Hi this is venky
+// Hello this is Tayler, hi
+
+
+var character = {}
+character.name = 'John';
+character['weapon'] = 'Knife';
+character.isGuilty = true;
+character['position'] = { // position in board
+    x: 2,
+    y: 2
+}
+
+
+// character.??
+
+character.name = 'Beth';
+character['weapon'] = [" baseball bat ", "Knife"];
+character['room'] = 'The den';
+character['postion'] = {
+    x: 5,
+    y: 6
+}
+//is that right ?
+// Yes, i think so :)
+// Im still learning :)
+// Can you see the terminal ?
+// Yes
+// Nice
+// We created an object name character with 3 values: weapon, room, position.
+// oooohhhh
+// sorry
+// we are back!!
+// this is GREAT!!
+// Thank you for working with me!
+// You nailed that one !!
+// https://github.com/tayler-ramsay
+
+
+/*
+. 1.Create an object that looks like this:
+
+{"name": "Rusty", "room":"kitchen", "weapon":"candlestick"}
+
+2. Extract out the weapon and location using destructuring
+*/
+
+// 1.Create an object that looks like this:
+
+var myObj1 = {
+    name : "Rusty",
+    room : "Kitchen",
+    weapon : "candlestick",
+}
+
+// 2. Extract out the weapon and location using destructuring
+let {weapon, room} = myObj1;
+
+
+// This is the same as
+let {weapon, room} = {
+    name : "John",
+    room : "Doe",
+    weapon : "Knife"
+} // This will error because weapon and room is already set above
+  // I thought you could change it with let
+// Lets see
+// you got it!!
+// SyntaxError: Identifier 'weapon' has already been declared
+
+
+
+var myObj = {
+    'name': 'John',
+    'room': 'Doe',
+    'weapon': 'Knife'
+}
+
+// Are you doing step 2 ? Who wants to do it ?
+// 2. Extract out the weapon and location using destructuring
+// I can try // go go :D sorry can you help
+// I see thank you I was lost
+
+const {weapon, room} = {"candelstick", "Kitchen"};
+
+
+var {weapon, room} = myObj1;
+
+
+
+//Questios for Bianca:
+    // let or const or var ?
+    // Why let does not work ?
+
+// i think you have to pass in the keys (name, room or weapon)
+// Try it in the console
+// sorry im confused// Me too :)
+// I dont think let worked because it was assigned
+// by const already and can't change
+// :)
+// BRB
+// I still don't understand how we are destructing the values
+// Do you have a email or twitter or git hub I really like this pair coding
+
+// [uri] the example didn't work because of 2 errors:
+//    1. missing "var" or "let" or "const" declaration
+//    2. after adding "let", a new error was thrown, complaining that "first1" was already declared.
+//       this error will come up when you try to re-declare a previously declared variable.
+//       in our case, the "first1" variable was already declared preciously in the first example of the array
+//
+//       in other words, it would have worked just fine on a "new page" (refresh \ reloard etc..)
+//       Ivan got us this far I was totally lost...
+//       I apperciate all your advice thus far..
+
+// Twitter: @ivanmdev, github: alcance
+// Uri do you have twitter
+// [uri] - yup! it's @uri_chandler
+// @tayler_ramsay
+
+
+
+//Loop through all the properties of the suspect objects in the suspects array
+
+const game = {
+    'suspects': [
+        {
+            name: "Rusty",
+            color: "orange"
+        }, {
+            name: "Miss Scarlet",
+            color: "red"
+        }
+    ]
+}
+
+
+
+//Loop through all the properties of the suspect objects in the suspects array
+
+
+// Simple loop for this
+
+for (let i=0; i<game.suspects.length; i++){
+
+    let currentSuspect = game.suspects[i];
+    for (let prop in currentSuspect){
+        console.log('property name: ', prop);
+        console.log('property value: ', currentSuspect[prop]);
+    }
+}
+
+// Alternative
+
+for (var i = 0; i < game.suspects.length; i++) {
+    console.log(game.suspects[i]);
+}
+
+// ES6 style
+// dot notation
+game.suspects.forEach(suspect => console.log(suspect));
+
+// yay! * 2
+// bracket notation
+game["suspects"].forEach(suspect=> console.log(suspect));
+
+//this is great!!
+
+// ヽ༼ຈل͜ຈ༽ﾉ.  <-- this is awesome haha! nice
+
+// haha ok
+// no worries I was trying to find the slides lol
+
+// i think Rusty is guilty
+for (let i=0; i<game.suspects.length; i++){
+
+    let currentSuspect = game.suspects[i];
+
+    if (currentSuspect.color === "orange"){  // :) do the quotes need to be the same as in the object ->> not a must (single quotes would work)
+        currentSuspect.isGuilty = true;
+    }
+}
+
+
+for (let i= 0; i < game.suspects.length; i++) {
+    if (game.suspects[i].color === 'orange') {
+        game.suspects[i].isGuilty = true;
+    };
+}
+
+
+
+// we should let less knowledge to try first and then jump in
+// sorry not understanding "less knowledge"
+// is the console working for you?
+// oh - nothing gets logged that's all (no console.log)
+// my head hurts!!  OHHHHH! Duh slap!!$
+
+
+
+
+
+
+
+
+
+// how would you like to work Im new to pair coding so just let me know
+
+// Destructure this nested data structure into two variables
+// with the strings 'red' and 'orange
+
+const suspects = [
+    {
+        name: "Rusty",
+        color: "orange"
+    }, {
+        name: "Miss Scarlet",
+        color: "red"
+    }
+];
+
+// How should we approach this?
+// yup this looks like a good start. we need to:
+
+// ---> type your name in the step if you want to collaborate
+//
+// 1. extract each suspects tayler would we have to use the key with the value
+//    [uri] so, how do we destructure an array?
+//        let [rusty, scarlet] = suspects; // this should result in 2 variables, each a different suspect
+// 2. then extract the data
+
+
+let {["Rusty" , "Miss Scarlet"] } = { , };
+
+// Who is down to skype call to discuss exersices??
+// I dont have skype or I would
+// Can i try ? (ivan) yes please
+
+// yay! you did it! (╭☞ ͡ ͡° ͜ ʖ ͡ ͡°)╭☞
+
+// this should also work: let [{color:o}, {color:r}] = suspects
+
+let [a, b] = suspects.map(suspect => suspect.color); // ivan - wil this work?
+
+// 4 minutes left...
+
+
+// go ahead uri // -> just replied in the chat window (:
+// well done
+
+// [uri] - effectively, we want to "convert" each string to the object..
+//       - we'll probably need to iterate over each string in the "suspects" array
+//       - then, for each of these, somehow convert them into a suspect obj, and populate the suspectsList array
+
+
+
+function CreateSuspectObjects(name) {
+  return {
+    name: name,
+    color: name.split(' ')[2],//
+    speak() {
+      console.log("my name is ", name);
+    }
+  };
+};
+
+// the 3 periods at the end of suspects returns a syntax error: unexpected token ] ?
+// yeah in this context it's not used as the "spread" operator - that's just a regular "etc..." - remove them (:
+
+var suspects = ['Miss Scarlet', 'Colonel Mustard', 'Mr. White']; //, ...];
+
+var suspectsList = [];
+
+CreateSuspectObjects(suspects[0]);
+
+// jonathan - here's what I came up with.
+
+suspectsList = suspects.map((suspect => CreateSuspectObjects(suspect)));
+// exactly!
+// also, we can make this even shorter: suspectsList = suspects.map(CreateSuspectsObject)
+// so the function that you pass in .map automatically recieves each item as an arg?
+
+
+
+
+// EXERCISE: Refactor with _.each
+// Implement our own underscore
+function CreateSuspectObjects(name) {
+  return {
+    name: name,
+    color: name.split(' ')[1],
+    speak() {
+      console.log("my name is ", name);
+    }
+  };
+};
+
+var suspects = ['Miss Scarlet', 'Colonel Mustard', 'Mr. White'];
+
+var suspectsList = [];
+
+for(var i = 0; i < suspects.length; i++){
+ suspectsList.push(CreateSuspectObjects(suspects[i]));
+}
+
+// Refactor using underscore ? Who wants to try ?
+
+_.each(suspects, function(suspect) {
+    suspectsList.push(CreateSuspectObjects(suspect));
+    console.log(suspect);
+})
+
+
+// Implement our own underscore
+// Can't you do just each(list,callback) in ES6? Just curious
+// [uri] - yes, you can - also works in ES5
+
+const _ = {
+    each(list, callback){
+        list.forEach(item => {
+            callback(item);
+        })
+    }
+}
+
+// LETS try it
+
+
+// ( •_•)O*¯`·.¸.·´¯`°Q(•_• )
+
+// this version should also work:
+const _ = { each: (list, callback) => list.forEach(callback) } // does this work?
+// NICE!! /WHY USING COLON : (each: ) ??
+// Anonymous function I think? even less code
+
+// using a colon since an arrow function will throw a syntax error in this notation..
+// so "each" is the "key", and the arrow function is the "value"
+
+// Gotcha, that is awesome // #js_is_awesome // shout that on a room full of pythonists lol // ha ha yeah
+
+// WHOA! TESTING
+
+
+// this only works for arrays right? not objects like lodash does as well.
+// right, won't work for object
+
+
+// ok guys, one more version - without using "Array.prototype.forEach".. here goes:
+const _ = {
+    each: (list, callback) => {
+        for (let i=0; i<list.length; i++){
+            callback(list[i], i, list); // extra params just to conform with signature of native forEach
+        }
+    }
+};
+
+// Just in case anyone is confused (i was)
+// each is the key name
+// the value is a function
+// above we use ES6 syntax () => {}
+
+const _ = {
+    each: function(list, callback) {
+        for (let i=0; i<list.length; i++){
+            callback(list[i], i, list); // extra params just to conform with signature of native forEach
+        }
+    }
+};
+
+
+// Anyone else has another approach ?
+
+
+
+//you shouldn't use forEach ;)
+
+// ..........................................................
+// map over weapons and make an array of 'broken' weapons.
+// e.g ['broken candle', broken leadpipe', broken revolver']
+const weapons = ['candle', 'leadpipe', 'revolver'];
+
+const makeBroken = function(item) {
+    return `broken ${item}`;
+}
+
+
+// Who wants to try this?
+//what is output??
+// [uri] a new array, with broken weapons
+
+
+// boilerplate
+const _ = {
+    map: function(array, callback) {
+        // TODO
+        // this need to output a new array
+        var results = [];
+
+        // for loop ?
+
+        // [ivan] We can replace this for loop with each method
+
+        // [ivan] Each gets an array and a callback (a function to execute for each item in the array)
+        // [ivan] should we use this.each instead ?
+        // [uri] yeah i think we shouldn't rely on the fact that the object will be called '_'. "this" is safer
+
+        this.each(array, (item) => {
+            // ANYONE ? // we need to push the item to the array results
+            results.push(callback(item)); // [jonathan] ?? //[uri] - yup!
+        });
+
+
+        /* We are keeping this code commented to have a comparison
+
+        for (var i = 0; i < array.length; i++) {
+            item = array[i];
+            results.push(callback(item)) // who want to try this? WHAT WE NEED TO PUSH HERE?
+        }
+
+        */
+
+
+        return results;
+    },
+    each: function(list, callback) {
+        for (let i = 0; i < list.length; i++) {
+            callback(list[i], i, list);
+        }
+    }
+};
+
+// Clean version
+const _ = {
+    map: function(array, callback) {
+        var results = [];
+
+        this.each(array, (item) => {
+            results.push(callback(item));
+        });
+
+        return results;
+    },
+
+    each: function(list, callback) {
+        for (let i = 0; i < list.length; i++) {
+            callback(list[i], i, list);
+        }
+    }
+};
+
+
+
+_.map(weapons, makeBroken); // looks good
+
+
+// yay!!
+// ♪┏(°.°)┛┗(°.°)┓┗(°.°)┛┏(°.°)┓ ♪
+
+// LOL the ascii art here is amazing
+
+// DOES ANYONE WANT TO TRY IT OUT??
+/*
+1. Create a variable named `_`
+2. Pass array and callback
+3. Create a new variable and assign an empty array
+4. Create a for loop using the array.lenght
+5. Push the item to the results array
+6. Return results
+*/
+
+// [ivan] Lets use each!! Who wants try this?  ??
+// [ivan] Tayler?
+// [ivan] _.each is avaiable now
+// [ivan] We can replace the for loop with this.each instead
+// [uri]  this is great for practice - just keep in mind that when testing, it's better
+//        to keep the two separated (makes for better unit testing, loosly coupled implementation + tests)
+
+
+
+
+

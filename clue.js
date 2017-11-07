@@ -1,8 +1,25 @@
-myObj = {
-    first1: 'Me',
-    second1: 'You'
+const game = {
+    'suspects': [
+        {
+            name: "Rusty",
+            color: "orange"
+        }, {
+            name: "Miss Scarlet",
+            color: "red"
+        }
+    ]
 };
 
-let {first1, second1} = myObj;
+var gameLoop = function () {
+    for (var i = 0; i < game.suspects.length; i++) {
+        console.log('outer loop')
+        for (var key in game.suspects[i]) {
+        }
+    }
+    }
 
-console.log(first1, second1);
+function foo() {
+    for (let
+}
+
+foo();
